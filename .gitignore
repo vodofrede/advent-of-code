@@ -1,0 +1,4 @@
+# don't commit input files
+**/input/**/*.txt
+
+# temporary files
