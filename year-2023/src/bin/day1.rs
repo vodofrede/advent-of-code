@@ -37,7 +37,7 @@ fn part2(input: &str) -> i64 {
 
             numbers
         })
-        .map(|ns| ns[0] * 10 + ns.last().unwrap())
+        .filter_map(|ns| Some(ns.first()? * 10 + ns.last()?))
         .sum::<u32>() as i64
 }
 
