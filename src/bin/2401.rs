@@ -2,7 +2,7 @@ use regex::Regex;
 use std::{collections::HashMap, fs, iter};
 
 fn main() {
-    let input = fs::read_to_string("input/day1.txt").unwrap();
+    let input = fs::read_to_string("input/2401.txt").unwrap();
 
     part1(&input);
     part2(&input);
@@ -31,7 +31,7 @@ fn part1(input: &str) {
     let sum = iter::zip(left, right)
         .map(|(l, r)| l.max(r) - l.min(r))
         .sum::<usize>();
-    println!("day 1: {sum}");
+    println!("part 1: {sum}");
 }
 
 fn part2(input: &str) {
@@ -46,5 +46,5 @@ fn part2(input: &str) {
         .iter()
         .map(|v| v * counts.get(v).unwrap_or(&0))
         .sum::<usize>();
-    println!("day 2: {sum}");
+    println!("part 2: {sum}");
 }
