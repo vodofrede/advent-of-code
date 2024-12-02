@@ -2,7 +2,7 @@ use regex::Regex;
 use std::{collections::HashMap, fs, iter};
 
 fn main() {
-    let input = fs::read_to_string("input/2401.txt").unwrap();
+    let input = fs::read_to_string("input/2024-01.txt").unwrap();
 
     part1(&input);
     part2(&input);
