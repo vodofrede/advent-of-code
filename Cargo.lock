@@ -6,6 +6,7 @@ version = 3
 name = "advent-of-code"
 version = "0.1.0"
 dependencies = [
+ "aoc",
  "regex",
 ]
 
@@ -17,6 +18,19 @@ checksum = "8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916"
 dependencies = [
  "memchr",
 ]
+
+[[package]]
+name = "aoc"
+version = "0.1.0"
+dependencies = [
+ "request",
+]
+
+[[package]]
+name = "bytemuck"
+version = "1.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b37c88a63ffd85d15b406896cc343916d7cf57838a847b3a6f2ca5d39a5695a"
 
 [[package]]
 name = "memchr"
@@ -52,3 +66,12 @@ name = "regex-syntax"
 version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
+
+[[package]]
+name = "request"
+version = "0.1.0"
+source = "git+https://github.com/vodofrede/request#718ff7228f9d71f15ffc5413c785814017e6a8e8"
+dependencies = [
+ "bytemuck",
+ "regex",
+]

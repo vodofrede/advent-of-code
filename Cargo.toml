@@ -1,7 +1,12 @@
+[workspace]
+members = ["lib"]
+
 [package]
 name = "advent-of-code"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+aoc = { path = "lib" }
 regex = "1.11.1"
+

@@ -1,7 +1,5 @@
-use std::fs;
-
 fn main() {
-    let input = fs::read_to_string("input/1501.txt").unwrap();
+    let input = aoc::input(2015, 1);
     part1(&input);
     part2(&input);
 }
