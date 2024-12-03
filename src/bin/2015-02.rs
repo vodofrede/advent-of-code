@@ -1,5 +1,5 @@
 use regex::Regex;
-use std::{cmp, fs};
+use std::fs;
 
 fn main() {
     let input = fs::read_to_string("input/2015-02.txt").unwrap();
