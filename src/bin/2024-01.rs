@@ -26,7 +26,6 @@ fn part1(input: &str) {
         .sum::<u64>();
     println!("part 1: {sum}");
 }
-
 fn part2(input: &str) {
     let (left, right) = parse(input);
 
