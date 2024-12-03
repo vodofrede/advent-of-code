@@ -1,4 +1,3 @@
-use regex::Regex;
 use std::{collections::HashMap, fs, iter};
 
 fn main() {
@@ -9,16 +8,10 @@ fn main() {
 }
 
 fn parse(input: &str) -> (Vec<usize>, Vec<usize>) {
-    let re = Regex::new(r"(\d+)\s+(\d+)").unwrap();
     input
         .lines()
-        .map(|l| re.captures(l).unwrap())
-        .map(|c| {
-            (
-                c[1].parse::<usize>().unwrap(),
-                c[2].parse::<usize>().unwrap(),
-            )
-        })
+        .filter_map(|l| l.split_once("   "))
+        .map(|(a, b)| (a.parse::<usize>().unwrap(), b.parse::<usize>().unwrap()))
         .collect()
 }
 
@@ -29,7 +22,7 @@ fn part1(input: &str) {
     right.sort_unstable();
 
     let sum = iter::zip(left, right)
-        .map(|(l, r)| l.max(r) - l.min(r))
+        .map(|(l, r)| l.abs_diff(r))
         .sum::<usize>();
     println!("part 1: {sum}");
 }
