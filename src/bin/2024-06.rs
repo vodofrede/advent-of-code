@@ -86,7 +86,7 @@ fn part2(input: &str) {
             let (nx, ny) = (x + dx, y + dy);
             match map.get((nx, ny)) {
                 Some('.') | Some('^') => {
-                    if !simulation && !obstacles.contains(&(nx, ny)) {
+                    if !simulation && !obstacles.contains(&(nx, ny)) && (x, y) != start {
                         let mut map = map.clone();
                         *map.get_mut((nx, ny))? = '#';
                         if walk(&map, start, true).is_none() {
